@@ -1,9 +1,9 @@
-FROM alpine:3.7 AS builder
+FROM alpine:3.16.7 AS builder
 
 RUN apk add --update --no-cache ca-certificates
 
 
-FROM alpine:3.7
+FROM alpine:3.16.7
 
 COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
